@@ -1,0 +1,358 @@
+---
+import "../styles/global.css";
+import { ThemeSwitch } from "../components/theme-switch";
+import { Card } from "../components/card";
+import Base from "../layouts/base.astro";
+import type { MenuCard } from "../utils/menu";
+
+const currencyIcon = "₾";
+
+const menu: MenuCard[] = [
+  {
+    title: "Kitchen",
+    sections: [
+      {
+        header: "Philippines 🇵🇭",
+        tip: "-10% from 9:00 to 9:59",
+        items: [
+          {
+            name: "Crunchy eggs with salmon",
+            price: 22,
+          },
+        ],
+      },
+      {
+        header: "India 🇮🇳",
+        tip: "-10% from 9:00 to 9:59",
+        items: [
+          {
+            name: "Chicken curry with basmati rice",
+            price: 24,
+          },
+        ],
+      },
+      {
+        header: "Belarus 🇧🇾",
+        tip: "-10% from 10:00 to 10:59",
+        items: [
+          {
+            name: "Classic potato draniki with salmon and cream cheese sauce",
+            price: 22,
+          },
+        ],
+      },
+      {
+        header: "Ukraine 🇺🇦",
+        tip: "-10% from 11:00 to 11:59",
+        items: [
+          {
+            name: "Syrniki with seasonal homemade jam (quince & kiwi) and sour cream",
+            price: 18,
+          },
+        ],
+      },
+      {
+        header: "France 🇫🇷",
+        tip: "-10% from 12:00 to 12:59",
+        items: [
+          {
+            name: "Zucchini draniki with salmon and poached egg",
+            price: 22,
+          },
+        ],
+      },
+      {
+        header: "Sweden 🇸🇪",
+        tip: "-10% from 12:00 to 12:59",
+        items: [
+          {
+            name: "IKEA meatballs with mashed potatoes or french fries",
+            price: 23,
+          },
+        ],
+      },
+      {
+        header: "Italy 🇮🇹",
+        tip: "-10% from 12:00 to 12:59",
+        items: [
+          {
+            name: "Panini with 3 cheeses and homemade pesto",
+            price: 14,
+          },
+        ],
+      },
+      {
+        header: "UK 🇬🇧",
+        tip: "-10% from 13:00 to 13:59",
+        items: [
+          {
+            name: "English breakfast with spiced sausages, bacon, fried eggs and beans",
+            price: 24,
+          },
+          {
+            name: "Oatmeal porridge with nuts and fruits. With milk of water",
+            price: 9,
+          },
+        ],
+      },
+      {
+        header: "USA 🇺🇸",
+        tip: "-10% from 17:00 to 17:59",
+        items: [
+          {
+            name: "Homemade banana granola with dried fruits, nuts and local matsoni",
+            price: 12,
+          },
+        ],
+      },
+    ],
+    colors: {
+      light: {
+        background: "yellow",
+        text: "black",
+      },
+      dark: {
+        background: "black",
+        text: "white",
+      },
+    },
+  },
+  {
+    title: "Coffee",
+    sections: [
+      {
+        header: "Classic",
+        items: [
+          {
+            name: "Americano",
+            price: 6,
+          },
+          {
+            name: "Espresso",
+            price: 5,
+          },
+          {
+            name: "Double espresso",
+            price: 7,
+          },
+          {
+            name: "Macchiato",
+            price: 7,
+          },
+          {
+            name: "Cappuccino",
+            price: 10,
+          },
+          {
+            name: "Latte",
+            price: 10,
+          },
+          {
+            name: "Raf",
+            price: 12,
+          },
+          {
+            name: "Flat white",
+            price: 12,
+          },
+        ],
+      },
+      {
+        header: "Ice coffee",
+        items: [
+          {
+            name: "Frappe",
+            price: 15,
+          },
+          {
+            name: "Ice Americano",
+            price: 7,
+          },
+          {
+            name: "Ice Latte",
+            price: 11,
+          },
+          {
+            name: "Bumblebee",
+            price: 15,
+          },
+          {
+            name: "Espresso tonic",
+            price: 10,
+          },
+        ],
+      },
+      {
+        header: "Specials",
+        items: [
+          {
+            name: "Orange cappuccino",
+            price: 12,
+          },
+          {
+            name: "Halva latte",
+            price: 12,
+          },
+          {
+            name: "Pumpkin latte",
+            price: 12,
+          },
+          {
+            name: "Matcha latte",
+            price: 12,
+          },
+          {
+            name: "Raf lavender",
+            price: 12,
+          },
+        ],
+      },
+      {
+        items: [
+          {
+            name: "+ milk",
+            price: 1,
+          },
+          {
+            name: "+ alternative milk",
+            price: 2,
+          },
+          {
+            name: "+ lactose free milk",
+            price: 2,
+          },
+          {
+            name: "+ syrup",
+            price: 1,
+          },
+        ],
+      },
+    ],
+    colors: {
+      light: {
+        background: "black",
+        text: "white",
+      },
+      dark: {
+        background: "yellow",
+        text: "black",
+      },
+    },
+  },
+  {
+    title: "Drinks",
+    sections: [
+      {
+        header: "Tea pot 700ml",
+        items: [
+          {
+            name: "Black tea",
+            price: 10,
+          },
+          {
+            name: "Black tea with bergamot",
+            price: 10,
+          },
+          {
+            name: "Green tea",
+            price: 10,
+          },
+          {
+            name: "Green tea with jasmine",
+            price: 10,
+          },
+        ],
+      },
+    ],
+    colors: {
+      light: {
+        background: "green",
+        text: "white",
+      },
+      dark: {
+        background: "peach",
+        text: "white",
+      },
+    },
+  },
+  {
+    title: "Cocktails",
+    sections: [
+      {
+        header: "Classic",
+        tip: "-10% from 9:00 to 9:59",
+        items: [
+          {
+            name: "Aperol Spritz",
+            price: 21,
+          },
+          {
+            name: "Negroni",
+            price: 21,
+          },
+          {
+            name: "Whiskey sour",
+            price: 21,
+          },
+        ],
+      },
+    ],
+    colors: {
+      light: {
+        background: "peach",
+        text: "white",
+      },
+      dark: {
+        background: "green",
+        text: "white",
+      },
+    },
+  },
+];
+---
+
+<Base>
+  {
+    menu.map(({ title, sections, colors }, index) => (
+      <Card
+        className="rounded-t-3xl relative"
+        style={index === 0 ? undefined : { marginTop: -index * 24 }}
+        colors={colors}
+        client:load
+      >
+        <header class="flex justify-between">
+          <div>
+            <h1 class="font-medium font-header text-7xl">21PM</h1>
+            <span class="uppercase font-bold">{title}</span>
+          </div>
+          <ThemeSwitch client:load />
+        </header>
+        <div class="h-20" />
+        <div class="flex gap-8 flex-col">
+          {sections.map((section) => (
+            <div>
+              <div class="flex justify-between">
+                <span class="uppercase font-bold font-subheader">
+                  {section.header}
+                </span>
+                <span>{section.tip}</span>
+              </div>
+              <hr class="text-current my-2" />
+              <div class="flex flex-col gap-2">
+                {section.items.map((item) => (
+                  <div class="flex justify-between">
+                    <span class="max-w-sm">{item.name}</span>
+                    <span class="font-subheader text-lg">
+                      {item.price} {currencyIcon}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+        <div class="h-20" />
+      </Card>
+    ))
+  }
+</Base>

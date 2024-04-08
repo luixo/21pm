@@ -1,0 +1,38 @@
+---
+import "../styles/global.css";
+
+const url = "https://21pm.ge/";
+const title = "21PM. Cafe-bar in Tbilisi.";
+const description =
+  "Cafe-bar in Tbilisi. Fusion cuisine with breakfasts from around the world all day, specialty coffee, signature cocktails and craft beer. Friendly.";
+const image = "/bg.png";
+const icon = "/favicon-32x32.png";
+---
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href={icon} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+    <link rel="canonical" href={url} />
+    <meta property="og:url" content={url} />
+  </head>
+  <body class="bg-yellow flex flex-col items-center">
+    <div class="relative max-w-screen-md w-full flex-1">
+      <slot />
+    </div>
+  </body>
+</html>

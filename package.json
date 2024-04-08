@@ -1,0 +1,65 @@
+{
+  "name": "21pm",
+  "type": "module",
+  "version": "0.0.1",
+  "packageManager": "yarn@4.1.0",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write '**/*.{js,ts,tsx,json}'",
+    "format:verify": "prettier --check '**/*.{js,ts,tsx,json}'",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "lint-staged": "lint-staged"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.5.10",
+    "@astrojs/mdx": "^2.2.4",
+    "@astrojs/node": "^8.2.5",
+    "@astrojs/react": "^3.1.1",
+    "@astrojs/rss": "^4.0.5",
+    "@astrojs/sitemap": "^3.1.2",
+    "@nanostores/react": "^0.7.2",
+    "@radix-ui/react-switch": "^1.0.3",
+    "@types/react": "^18.2.74",
+    "@types/react-dom": "^18.2.24",
+    "astro": "^4.5.16",
+    "classnames": "^2.5.1",
+    "nanostores": "^0.10.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.4"
+  },
+  "devDependencies": {
+    "@astrojs/tailwind": "^5.1.0",
+    "@eslint/js": "^9.0.0",
+    "@typescript-eslint/parser": "^7.6.0",
+    "eslint": "^9.0.0",
+    "eslint-plugin-astro": "^0.34.0",
+    "lint-staged": "^15.2.2",
+    "pre-commit": "^1.2.2",
+    "prettier": "^3.2.5",
+    "prettier-plugin-astro": "^0.13.0"
+  },
+  "pre-commit": [
+    "typecheck",
+    "lint-staged"
+  ],
+  "prettier": {
+    "trailingComma": "all",
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": false
+  },
+  "lint-staged": {
+    "*.{j,t}s{,x}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  }
+}
