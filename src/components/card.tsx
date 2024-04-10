@@ -62,7 +62,7 @@ export const Card: React.FC<Props> = ({
   return (
     <div
       className={cn(
-        "p-4",
+        "p-4 transition-all",
         getBackgroundColor(colors[theme].background),
         getTextColor(colors[theme].text),
         className,

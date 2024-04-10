@@ -1,16 +1,18 @@
 import type { Colors } from "../components/card";
+import type { Locale } from "./locale";
 
 type MenuItem = {
-  name: string;
-  price: number;
+  title: Text;
+  subtitle: Text;
 };
 type MenuSection = {
-  header?: string;
-  tip?: string;
+  header?: Text;
+  tip?: Text;
   items: MenuItem[];
 };
+type Text = Record<Locale, string>;
 export type MenuCard = {
-  title: string;
+  title: Text;
   sections: MenuSection[];
   colors: Colors;
 };
