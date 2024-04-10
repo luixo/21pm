@@ -20,6 +20,12 @@ const config: Config = {
       subheader: ['"QuirohHeavy"', "sans"],
     },
     colors,
+    screens: {
+      sm: "320px",
+      md: "480px",
+      lg: "640px",
+      xl: "768px",
+    },
   },
   plugins: [],
 };
